@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["vue-semantic"] = factory();
+	else
+		root["vue-semantic"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -722,5 +732,7 @@
 	module.exports = "<div>\n<div v-el:pop\n  :data-title=\"title\"\n  :data-content=\"content\"\n  :data-html=\"html\"\n  :data-variation=\"variation\"\n  :data-position=\"position\">\n  <slot></slot>\n</div>\n<div class=\"ui popup\">\n  <slot name=\"pop\"></slot>\n</div>\n</div>";
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
 //# sourceMappingURL=vue-semantic.js.map

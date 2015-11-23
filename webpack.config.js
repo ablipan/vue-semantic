@@ -2,7 +2,7 @@
 * @Author: lipan
 * @Date:   2015-11-23 16:28:39
 * @Last Modified by:   lipan
-* @Last Modified time: 2015-11-23 17:54:31
+* @Last Modified time: 2015-11-23 20:16:06
 */
 const webpack = require('webpack')
 const path = require('path')
@@ -11,7 +11,9 @@ module.exports = {
     'vue-semantic': './src/index.js'
   },
   output: {
-    filename: './dist/[name].js'
+    filename: './dist/[name].js',
+    library: 'vue-semantic',
+    libraryTarget: 'umd'
   },
   resolve: {
     root: path.resolve('./')
