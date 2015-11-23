@@ -32,24 +32,19 @@ export default {
     title: {
       type: String
     },
-    // 消息类型：info warning success danger
     type: {
       type: String,
       default: 'info'
     },
-    // 持续时间
     duration: {
       type: String,
-      // 默认持续3000毫秒
       default: 3000
     },
-    // 是否显示,必须未双向绑定哦~
     show: {
       type: Boolean,
       default: false,
       twoWay: true
     },
-    // 是否可隐藏
     dismissable: {
       type: Boolean,
       default: false
