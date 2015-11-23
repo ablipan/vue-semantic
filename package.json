@@ -1,6 +1,6 @@
 {
   "name": "vue-semantic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vuejs semantic-ui components",
   "main": "src/index.js",
   "repository": {
