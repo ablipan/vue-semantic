@@ -1,0 +1,260 @@
+/**
+* ESLint 配置文件：
+* 官网：http://eslint.org/
+* Note：
+* rules{
+*  0: 关闭此规则,
+*  1: 将此规则应用为warning,
+*  2: 将此规则应用为error
+* }
+*/
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  // 全局变量，将忽略undefined检查
+  "globals": {
+    "$": true,// jQuery
+    "_": true,// lodash
+  },
+  "plugins": [
+    // 对html/vue文件中script的支持，详见：https://github.com/BenoitZugmeyer/eslint-plugin-html
+    "html"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    // 对象属性必须具有getter setter方法
+    "accessor-pairs": 0,
+    // 数组方括号边是否允许有空格
+    "array-bracket-spacing": 0,
+    // 将var申明的变量视为块级变量，在变量定义所在块之外引用将产生警告
+    "block-scoped-var": 0,
+    // 大括号格式；1tbs为默认样式，详见：http://eslint.org/docs/rules/brace-style
+    "brace-style": [2, "1tbs", {
+      // 开始和结束括号是否允许在一行
+      "allowSingleLine": true
+    }],
+    // 必须使用驼峰命名方式
+    "camelcase": 0,
+    // 对象/数组末尾是否允许有逗号
+    "comma-dangle": 0,
+    // 逗号两边是否允许有间隔
+    "comma-spacing": [2, {
+      // 如果为true，表示必须要有间隔
+      "before": false,
+      "after": true
+    }],
+    // 逗号格式：行首/行尾
+    "comma-style": [2, "last"],
+    // 复杂程度：详见http://eslint.org/docs/rules/complexity
+    "complexity": 0,
+    // 推导属性间隔：详见http://eslint.org/docs/rules/computed-property-spacing
+    "computed-property-spacing": 0,
+    // return必须有值
+    "consistent-return": 0,
+    // this只能被指定为：
+    "consistent-this": [2, "self"],
+    // 校验constructor方法是否调用了super
+    "constructor-super": 2,
+    // 花括号格式：multi-line: if, else if, else, for, while, do后必须有花括号
+    "curly": [2, "multi-line"],
+    // switch是否具有default case
+    "default-case": 0,
+    // 点的位置：object：点必须与object在同一行；property：点必须与属性在同一行
+    "dot-location": [2, "property"],
+    // 必须使用点标识符来访问属性；例如：foo["bar"]将产生警告
+    "dot-notation": 0,
+    // 结尾必须空一行，(非空文件末尾空一行是UNIX的一个通用习惯)
+    "eol-last": 2,
+    // 强制使用===或!==，allow-null：允许使用foo==null来检查是否为null和undifined
+    "eqeqeq": [2, "allow-null"],
+    // 函数必须具有名字；主要作用是便于调试，避免异常时栈中只显示anonymous function...
+    "func-names": 0,
+    // 函数格式：
+    "func-style": 0,
+    // generator函数星号前后空格
+    "generator-star-spacing": [2, {
+      "before": true,
+      "after": true
+    }],
+    // 详见：http://eslint.org/docs/rules/guard-for-in
+    "guard-for-in": 0,
+    // 必须处理回调的异常
+    "handle-callback-err": [2, "^(err|error|.+Error)$"],
+    // 缩进2个空格
+    "indent": [2, 2, {
+      // switchCase缩进
+      "SwitchCase": 1
+    }],
+    // object间隔
+    "key-spacing": [2, {
+      // 冒号前空格
+      "beforeColon": false,
+      // 冒号后空格
+      "afterColon": true
+    }],
+    // 换行方式：http://eslint.org/docs/rules/linebreak-style
+    "linebreak-style": 0,
+    // 注释周围的空行
+    "lines-around-comment": 0,
+    "max-nested-callbacks": 0,
+    // 使用new调用构造函数时必须大写
+    "new-cap": [2, {
+      // 所有用new操作的函数都必须以大写字母开头
+      "newIsCap": true,
+      // 所有大写开头的函数都只能使用new进行调用
+      "capIsNew": false
+    }],
+    // new关键字调用的构造函数必须具有圆括号
+    "new-parens": 2,
+    // var后是否跟随空行
+    "newline-after-var": 0,
+    // 不能有alert
+    "no-alert": 0,
+    // 禁用Array构造器来构建新的数组，bad：Array(0, 1, 2)；ok：Array(500)
+    "no-array-constructor": 2,
+    // 禁用arguments.caller 和arguments.callee
+    "no-caller": 2,
+    // see http://eslint.org/docs/rules/no-catch-shadow
+    "no-catch-shadow": 0,
+    // 禁止在条件语句中进行赋值
+    "no-cond-assign": 2,
+    // 禁用console
+    "no-console": 0,
+    "no-constant-condition": 0,
+    "no-continue": 0,
+    "no-control-regex": 2,
+    "no-debugger": 2,
+    "no-delete-var": 2,
+    "no-div-regex": 0,
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-else-return": 0,
+    "no-empty": 0,
+    "no-empty-character-class": 2,
+    "no-empty-label": 2,
+    "no-eq-null": 0,
+    "no-eval": 2,
+    "no-ex-assign": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-extra-boolean-cast": 2,
+    "no-extra-parens": 0,
+    "no-extra-semi": 0,
+    "no-fallthrough": 2,
+    "no-floating-decimal": 2,
+    "no-func-assign": 2,
+    "no-implied-eval": 2,
+    "no-inline-comments": 0,
+    "no-inner-declarations": [2, "functions"],
+    "no-invalid-regexp": 2,
+    "no-irregular-whitespace": 2,
+    "no-iterator": 2,
+    "no-label-var": 2,
+    "no-labels": 2,
+    "no-lone-blocks": 2,
+    "no-lonely-if": 0,
+    "no-loop-func": 0,
+    "no-mixed-requires": 0,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multi-spaces": 2,
+    "no-multi-str": 2,
+    "no-multiple-empty-lines": [2, {
+      "max": 1
+    }],
+    "no-native-reassign": 2,
+    "no-negated-in-lhs": 2,
+    "no-nested-ternary": 0,
+    "no-new": 2,
+    "no-new-func": 0,
+    "no-new-object": 2,
+    "no-new-require": 2,
+    "no-new-wrappers": 2,
+    "no-obj-calls": 2,
+    "no-octal": 2,
+    "no-octal-escape": 2,
+    "no-param-reassign": 0,
+    "no-path-concat": 0,
+    "no-process-env": 0,
+    "no-process-exit": 0,
+    "no-proto": 0,
+    "no-redeclare": 2,
+    "no-regex-spaces": 2,
+    "no-restricted-modules": 0,
+    "no-return-assign": 2,
+    "no-script-url": 0,
+    "no-self-compare": 2,
+    "no-sequences": 2,
+    "no-shadow": 0,
+    "no-shadow-restricted-names": 2,
+    "no-spaced-func": 2,
+    "no-sparse-arrays": 2,
+    "no-sync": 0,
+    "no-ternary": 0,
+    "no-this-before-super": 2,
+    "no-throw-literal": 2,
+    "no-trailing-spaces": 2,
+    "no-undef": 1,
+    "no-undef-init": 2,
+    "no-undefined": 0,
+    "no-underscore-dangle": 0,
+    "no-unexpected-multiline": 2,
+    "no-unneeded-ternary": 2,
+    "no-unreachable": 2,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "args": "none"
+    }],
+    "no-use-before-define": 0,
+    "no-var": 0,
+    "no-void": 0,
+    "no-warning-comments": 0,
+    "no-with": 2,
+    "object-curly-spacing": 0,
+    "object-shorthand": 0,
+    // 只允许有一次变量申明
+    "one-var": 0,
+    "operator-assignment": 0,
+    "operator-linebreak": [2, "after", {
+      "overrides": {
+        "?": "before",
+        ":": "before"
+      }
+    }],
+    "padded-blocks": 0,
+    "prefer-const": 0,
+    "quote-props": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "radix": 2,
+    // 语句结尾是否需要分号
+    "semi": [0],
+    "semi-spacing": 0,
+    "sort-vars": 0,
+    "space-after-keywords": [2, "always"],
+    "space-before-blocks": [2, "always"],
+    // 函数括号前是否需要空格
+    "space-before-function-paren": [2, "never"],
+    "space-in-parens": [2, "never"],
+    "space-infix-ops": 2,
+    "space-return-throw-case": 2,
+    "space-unary-ops": [2, {
+      "words": true,
+      "nonwords": false
+    }],
+    "spaced-comment": [2, "always", {
+      "markers": ["global", "globals", "eslint", "eslint-disable", "*package", "!"]
+    }],
+    "strict": 0,
+    "use-isnan": 2,
+    "valid-jsdoc": 0,
+    "valid-typeof": 2,
+    "vars-on-top": 0,
+    "wrap-iife": [2, "any"],
+    "wrap-regex": 0,
+    "yoda": [2, "never"]
+  }
+}
